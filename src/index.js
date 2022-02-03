@@ -3,12 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Listeproduit from "./Components/Liste_produits/Listeproduit";
-import { BrowerRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Listeproduit />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
