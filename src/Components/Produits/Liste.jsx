@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import {Link } from "react-router-dom";
+
 
 export default function Liste() {
-  const [products, setProducts] = useState([])
-
+  const [products, setProducts] = useState([]);
+  
   useEffect(() => {
     fetch("/api/v2/products/all")
       .then((response) => response.json())
       .then(({ result }) => setProducts(result));
-  }, [])
+  }, []);
 
   return (
     <div className="w-full mx-auto py-10">
@@ -15,11 +17,26 @@ export default function Liste() {
         {products.map((product) => (
           <div key={product.id}>
             <div className="rounded-lg overflow-hidden relative">
-              <img src={product.thumb.url} alt="" className="w-full h-[230px] object-cover" />
-
-              <div className="absolute bottom-0 right-0 mr-5 mb-3 text-white font-bold text-lg">{product.price.toLocaleString()} XAF</div>
+              <Link
+                className="btn btn-danger col-md-4"
+                to={
+                  "/details/" +
+                  product.id 
+                }
+              >
+                <img
+                  src={product.thumb.url}
+                  alt=""
+                  className="w-full h-[230px] object-cover hover:animate-pulse "
+                />
+              </Link>
+              <div className="absolute bottom-0 right-0 mr-5 mb-3 text-white font-bold text-lg">
+                {product.price.toLocaleString()} XAF
+              </div>
             </div>
-            <div className="mt-2 w-full overflow-hidden font-medium whitespace-nowrap overflow-ellipsis text-sm">{product.name}</div>
+            <div className="mt-2 w-full overflow-hidden font-medium whitespace-nowrap overflow-ellipsis text-sm">
+              {product.name}
+            </div>
             <button className="bloc w-full bg-gray-200 hover:bg-gray-800 hover:text-white transition-colors duration-300 text-center rounded p-2 mt-5 text-sm font-medium">
               Ajouter au panier
             </button>
@@ -27,5 +44,5 @@ export default function Liste() {
         ))}
       </div>
     </div>
-  )
+  );
 }
