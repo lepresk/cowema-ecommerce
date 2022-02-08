@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Components/Produits/Navbar";
-import Liste2 from "./Components/Produits/Liste2";
+import Liste2 from "./Components/Produits/Liste";
 import Panier from "./Components/Produits/Panier";
 import { useState } from "react";
 
@@ -17,8 +17,6 @@ const Home = () => {
     const ind = cart.indexOf(product);
     const arr = cart;
     arr[ind].amount += d;
-
-    console.log(arr)
 
     if (arr[ind].amount === 0) arr[ind].amount = 1;
 

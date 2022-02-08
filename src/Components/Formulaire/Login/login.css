@@ -1,0 +1,13 @@
+.card {
+  margin-top: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 4px 4px 1px #abacae;
+  width: 600px;
+}
+.textT{
+  margin-bottom: 17px;
+}
+.box {
+  width: 500px;
+}

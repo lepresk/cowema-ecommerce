@@ -1,14 +1,13 @@
 import React from "react";
-import { ShoppingBagIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { ShoppingBagIcon } from "@heroicons/react/outline";
 
 export default function Navbar({ setShow, size }) {
   return (
     <>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+      <nav className="bg-gray-200 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <span
-            className="self-center text-green-300 text-lg font-semibold whitespace-nowrap dark:text-white cursor-pointer"
+            className="self-center text-green-600 text-lg font-semibold whitespace-nowrap dark:text-white cursor-pointer"
             onClick={() => setShow(true)}
           >
             Cowema Boutique

@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-// import { StarIcon } from "@heroicons/react/solid";
-// import { RadioGroup } from "@headlessui/react";
 
 export default function Details() {
   const [filterData, setFilterData] = useState([]);
@@ -14,7 +12,7 @@ export default function Details() {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white" key={filterData.id}>
       <div className="mt-14 mb-8 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-20 p-2">
         <div className="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
           <p className=" text-4xl font-extrabold">{filterData.name}</p>
@@ -57,7 +55,7 @@ export default function Details() {
         <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-h-4">
           <div className="sm:rounded-lg bg-gray-200 h-1/2 ">
             <img
-              src={filterData.thumb.url}
+              src={filterData.url}
               alt=""
               className="w-full h-full object-center object-cover rounded-xl"
             />
@@ -66,7 +64,7 @@ export default function Details() {
           <div className="grid grid-cols-3 mt-4 gap-4 h-30">
             <div className="col-span-1 sm:rounded-lg bg-green-300 h-40 ">
               <img
-                src={filterData.thumb.url}
+                src={filterData.url}
                 alt=""
                 className="w-full h-full object-center object-cover rounded-xl"
               />

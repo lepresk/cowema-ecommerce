@@ -2,19 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Home from "./Home";
 import Details from "./Components/Produits/Details";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Store from "./Store";
-// import { Provider } from "react-redux";
+import Login from "./Components/Formulaire/Login/Login"
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<App />} />
         <Route path="/details/:id" element={<Details />} />
+        <Route path="/connexion" element={<Login/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

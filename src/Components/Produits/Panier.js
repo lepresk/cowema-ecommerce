@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
-
+// import React, { useState, useEffect } from "react";
 export default function Panier({ cart, setcart, handleChange }) {
   const handleRemove = (id) => {
     const arr = cart.filter((product) => product.id !== id);
     setcart(arr);
   };
-
   return (
-    <div className="bg-white">
-      <h1 className="font-extrabold mx-7">MON PANIER</h1>
+    <div className="bg-white mt-8">
+      <h1 className="font-extrabold ml-7">MON PANIER</h1>
       <div className=" mb-8 max-w-2xl mx-auto sm:px-2 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-5 lg:gap-x-20 p-2">
         <div className="hidden aspect-w-3 aspect-h-4 overflow-hidden lg:block col-span-3 border-t">
           {cart.map((product) => (
@@ -19,7 +17,7 @@ export default function Panier({ cart, setcart, handleChange }) {
               <div className="grid grid-cols-4 py-4 gap-4 border-b">
                 <div className="">
                   <img
-                    src={product.imageSrc}
+                    src={product.thumb.url}
                     alt=""
                     className="w-full h-full object-center object-cover"
                   />
